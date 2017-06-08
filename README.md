@@ -1,2 +1,3 @@
 # ansible-demo
-Ansible demo with Vagrant, installing Apache on CentOS and Ubuntu servers
+
+This repo contains a demo for getting started with Ansible using Vagrant

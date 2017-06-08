@@ -1,0 +1,29 @@
+---
+# tasks file for apache_demo
+
+- name: Update Ubuntu repositories
+  become: yes
+  apt:
+    update_cache: yes
+  when: OS_NAME == "ubuntu"
+
+- name: Install apache service
+  become: yes
+  package:
+    name: "{{ apache_package }}"
+    state: latest
+
+- name: Copy main html file
+  become: yes
+  template:
+    src: index.html.j2
+    dest: /var/www/html/index.html
+    owner: vagrant
+    group: vagrant
+    mode: 0644
+
+- name: Enable service
+  become: yes
+  service:
+    name: "{{ apache_package }}"
+    state: started
