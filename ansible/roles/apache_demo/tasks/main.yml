@@ -5,7 +5,7 @@
   become: yes
   apt:
     update_cache: yes
-  when: OS_NAME == "ubuntu"
+  when: ansible_os_family == "Debian"
 
 - name: Install apache service
   become: yes

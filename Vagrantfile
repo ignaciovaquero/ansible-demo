@@ -18,6 +18,5 @@ Vagrant.configure("2") do |config|
     vb.memory = "1024"
   end
   config.vm.provision "shell",
-    inline: "echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID+0hFkga7ntqA/OZgb402Dun1VKvdvNng1SjAf3jbbd ansible-demo' >> /home/vagrant/authorized_keys"
-  end
+    inline: "echo 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID+0hFkga7ntqA/OZgb402Dun1VKvdvNng1SjAf3jbbd ansible-demo' >> /home/vagrant/.ssh/authorized_keys"
 end
